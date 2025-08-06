@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apna Apna Dekh</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <h1 class="project-title" tabindex="0">Apna Apna Dekh </h1><br>
+
+  <main class="container" role="main" aria-label="Expense Splitter Application">
+    <label for="amount">Total Amount <span aria-hidden="true">*</span></label>
+    <input
+      type="number"
+      id="amount"
+      aria-required="true"
+      placeholder="Enter total amount"
+      min="0"
+      step="0.01"
+    />
+    <div id="amount-error" class="error" aria-live="assertive"></div>
+
+    <label for="people">Number of People <span aria-hidden="true">*</span></label>
+    <input
+      type="number"
+      id="people"
+      aria-required="true"
+      placeholder="Enter number of people"
+      min="1"
+      step="1"
+    />
+    <div id="people-error" class="error" aria-live="assertive"></div>
+
+    <label for="tip">Tip % (optional)</label>
+    <input
+      type="number"
+      id="tip"
+      placeholder="Enter tip percentage"
+      min="0"
+      step="0.01"
+    />
+    <div id="tip-error" class="error" aria-live="assertive"></div>
+
+    <label for="names">Names (comma separated with emojis)</label>
+    <input
+      type="text"
+      id="names"
+      placeholder="e.g. 😎 Sid, 😊 Ria, 🤓 Max"
+    />
+    <div id="names-error" class="error" aria-live="assertive"></div>
+
+    <label for="individualTips" class="checkbox-label">
+      <input type="checkbox" id="individualTips" />
+      Use individual tip percentages per person
+    </label>
+
+    <div class="small-text" id="individualTips-desc">
+      If checked, enter tips per person separated by commas in the next input.
+    </div>
+
+    <label for="tipsPerPerson" id="tipsPerPersonLabel" style="display:none;">
+      Tips % Per Person (comma separated)
+    </label>
+    <input
+      type="text"
+      id="tipsPerPerson"
+      placeholder="e.g. 10, 15, 12"
+      style="display:none;"
+    />
+    <div id="tipsPerPerson-error" class="error" aria-live="assertive"></div>
+
+    <div class="btn-group" role="group" aria-label="Action buttons">
+      <button id="splitBtn" class="btn-primary" aria-label="Calculate split">Split Now</button>
+      <button id="resetBtn" class="btn-secondary" aria-label="Reset all inputs and results">Reset</button>
+      <button id="copyBtn" class="btn-info" aria-label="Copy result to clipboard">Copy Result</button>
+      <button id="downloadBtn" class="btn-info" aria-label="Download result as text file">Download Result</button>
+      <button id="darkModeToggle" class="btn-outline-dark" aria-pressed="false" aria-label="Toggle dark mode">Dark Mode</button>
+    </div>
+
+    <section id="result" class="result-box" tabindex="0" aria-live="polite" aria-atomic="true"></section>
+
+    <canvas id="chart" aria-label="Expense split pie chart" role="img"></canvas>
+  </main>
+
+  <footer>
+    <button id="devBtn" class="btn-glow" aria-label="About the developer">About Developer</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

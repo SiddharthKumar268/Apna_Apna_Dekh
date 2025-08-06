@@ -1,0 +1,310 @@
+body {
+  background: #ffefba;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 40px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #5a4d4d;
+  min-height: 100vh;
+}
+
+.project-title {
+  font-weight: 900;
+  font-size: 2.5rem;
+  margin: 0 0 25px 0;
+  text-align: center;
+  user-select: none;
+  color: #a47474;
+}
+
+.container {
+  background: #ffffff;
+  max-width: 420px;
+  width: 100%;
+  padding: 30px 35px;
+  border-radius: 25px;
+  box-shadow:
+    8px 8px 20px rgba(229, 213, 204, 0.7),
+    -8px -8px 20px rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #a47474;
+  user-select: none;
+}
+
+input[type="number"],
+input[type="text"] {
+  padding: 12px 16px;
+  font-size: 1rem;
+  border-radius: 14px;
+  border: 2px solid #f1d5d5;
+  background: #fff6f6;
+  box-shadow:
+    inset 3px 3px 6px #e7cfcf,
+    inset -3px -3px 6px #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  color: #5a4d4d;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #ccbebe;
+  font-style: italic;
+}
+
+input:focus {
+  border-color: #f6b6b6;
+  box-shadow: 0 0 12px 2px rgba(246, 182, 182, 0.6);
+  background: #fff0f0;
+}
+
+.error {
+  color: #b04a4a;
+  font-size: 0.85rem;
+  margin-top: -14px;
+  margin-bottom: 10px;
+  min-height: 18px;
+  user-select: none;
+}
+
+.checkbox-label {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #a47474;
+  cursor: pointer;
+  user-select: none;
+}
+
+.small-text {
+  font-size: 0.85rem;
+  color: #b9a6a6;
+  margin-bottom: 10px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  font-weight: 700;
+  border-radius: 20px;
+  cursor: pointer;
+  user-select: none;
+  padding: 12px 18px;
+  min-width: 90px;
+  transition: background 0.4s ease, transform 0.15s ease;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #f6b6b6, #f9d8d8);
+  color: #7a3f3f;
+  box-shadow: 5px 5px 10px rgba(246, 182, 182, 0.5), -5px -5px 10px #fff0f0;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: linear-gradient(135deg, #f9d8d8, #f6b6b6);
+  outline: none;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: #f4c7c3;
+  color: #7a4d49;
+  border: none;
+  box-shadow:
+    5px 5px 10px rgba(210, 150, 150, 0.5),
+    -5px -5px 10px #f7e6e6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background-color: #e6b0aa;
+  color: #7a4d49;
+  outline: none;
+}
+
+.btn-outline-dark {
+  border: 2px solid #7a4d49;
+  background: transparent;
+  color: #7a4d49;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-dark:hover,
+.btn-outline-dark:focus-visible {
+  background-color: #7a4d49;
+  color: #fff6f6;
+  outline: none;
+}
+
+/* Dark mode overrides to keep text color same for these buttons */
+body.dark-mode .btn-secondary,
+body.dark-mode .btn-outline-dark {
+  color: #7a4d49 !important;
+}
+
+body.dark-mode .btn-secondary:hover,
+body.dark-mode .btn-outline-dark:hover,
+body.dark-mode .btn-secondary:focus-visible,
+body.dark-mode .btn-outline-dark:focus-visible {
+  color: #7a4d49 !important;
+}
+
+
+.result-box {
+  max-height: 160px;
+  overflow-y: auto;
+  background: #fff6f6;
+  border-left: 6px solid #f6b6b6;
+  padding: 15px 20px;
+  border-radius: 18px;
+  color: #7a3f3f;
+  font-weight: 600;
+  line-height: 1.4;
+  box-shadow: 3px 3px 8px rgba(246, 182, 182, 0.25);
+  user-select: text;
+  white-space: pre-line;
+  margin-top: 10px;
+}
+
+canvas {
+  margin-top: 28px;
+  border-radius: 18px;
+  box-shadow: 8px 8px 25px rgba(246, 182, 182, 0.3);
+  width: 100% !important;
+  height: auto !important;
+  transition: transform 0.3s ease;
+}
+
+canvas:hover,
+canvas:focus-visible {
+  transform: scale(1.05);
+  outline: none;
+  box-shadow: 0 0 20px 4px rgba(246, 182, 182, 0.6);
+}
+
+footer {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.btn-glow {
+  background: linear-gradient(135deg, #f9c9b6, #fbd7ce);
+  color: #7a4d49;
+  font-weight: 700;
+  border-radius: 30px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  box-shadow:
+    0 0 8px #fbd7ce,
+    0 0 16px #f9c9b6;
+  transition: box-shadow 0.4s ease;
+  user-select: none;
+  margin-bottom: 10px;
+}
+
+.btn-glow:hover,
+.btn-glow:focus-visible {
+  box-shadow:
+    0 0 14px #fbd7ce,
+    0 0 28px #f9c9b6;
+  outline: none;
+}
+
+
+@media (max-width: 480px) {
+  .container {
+    padding: 25px 20px;
+  }
+  button {
+    font-size: 1.1rem;
+    min-width: 75px;
+    padding: 10px 12px;
+  }
+  .btn-glow {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background: #222;
+  color: #ccc;
+}
+
+body.dark-mode .container {
+  background: #333;
+  box-shadow:
+    8px 8px 20px rgba(20, 20, 20, 0.7),
+    -8px -8px 20px rgba(40, 40, 40, 0.8);
+  color: #ccc;
+}
+
+body.dark-mode input[type="number"],
+body.dark-mode input[type="text"] {
+  background: #444;
+  border: 2px solid #666;
+  color: #ddd;
+  box-shadow: none;
+}
+
+body.dark-mode input::placeholder {
+  color: #aaa;
+}
+
+body.dark-mode input:focus {
+  border-color: #a67c7c;
+  box-shadow: 0 0 12px 2px rgba(166, 124, 124, 0.6);
+  background: #5a3f3f;
+}
+
+body.dark-mode button.btn-primary,
+body.dark-mode .btn-secondary,
+body.dark-mode .btn-info,
+body.dark-mode .btn-outline-dark {
+  color: #ddd;
+  border-color: #a67c7c;
+}
+
+body.dark-mode button.btn-primary:hover,
+body.dark-mode .btn-secondary:hover,
+body.dark-mode .btn-info:hover,
+body.dark-mode .btn-outline-dark:hover {
+  background-color: #a67c7c;
+  color: #222;
+}
+
+body.dark-mode .result-box {
+  background: #5a3f3f;
+  border-left-color: #a67c7c;
+  color: #f3dede;
+  box-shadow: 3px 3px 8px rgba(166, 124, 124, 0.4);
+}
+
+body.dark-mode canvas {
+  box-shadow: 8px 8px 25px rgba(166, 124, 124, 0.5);
+}
