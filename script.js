@@ -193,9 +193,7 @@ function generateColors(num) {
   return colors;
 }
 
-splitBtn.addEventListener('click', function() {
-  calculateSplit();
-});
+splitBtn.addEventListener('click', calculateSplit);
 
 resetBtn.addEventListener('click', function() {
   amountInput.value = '';
